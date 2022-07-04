@@ -19,7 +19,7 @@ class Login extends React.Component {
     const minimumSize = 3;
     if (value.length >= minimumSize) {
       this.setState({
-        loginSt: target.value,
+        loginSt: value,
         btnLoginSt: false,
       });
     }
