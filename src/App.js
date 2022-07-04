@@ -14,13 +14,15 @@ class App extends React.Component {
       <>
         <p>TrybeTunes</p>
         <section className="main-content">
+          {/*  <Switch> */}
           <Route component={ NotFound } />
           <Route path="/" component={ Login } />
+          <Route path="/profile/edit" component={ ProfileEdit } />
           <Route path="/Search" component={ Search } />
           <Route path="/Album" component={ Album } />
           <Route path="/Favorites" component={ Favorites } />
-          <Route path="/Profile" component={ Profile } />
-          <Route path="/Profile/edit" component={ ProfileEdit } />
+          <Route exact path="/profile" component={ Profile } />
+          {/*  </Sewitch> */}
         </section>
       </>
 
