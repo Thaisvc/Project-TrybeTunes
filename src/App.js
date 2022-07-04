@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <>
         <p>TrybeTunes</p>
-        <section>
+        <section className="main-content">
           <Route component={ NotFound } />
           <Route path="/" component={ Login } />
           <Route path="/Search" component={ Search } />
