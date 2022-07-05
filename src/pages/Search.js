@@ -52,14 +52,8 @@ class Search extends React.Component {
     return (
       <><Header />
       <section>
-
-        {
-          // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array
-          resultAlbumSt.map((title) => (<CardAlbuns
-            
-            cardInfo={title}
-          />))
-        }
+          {/* // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array */}
+          {  resultAlbumSt.map((title) =>  (<CardAlbuns cardInfo={title}/>))   }
        
         <div data-testid="page-search">search</div>
         <div>

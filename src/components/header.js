@@ -15,7 +15,7 @@ class Header extends Component {
 
   componentDidMount() {
     this.chamaApi();
-    console.log('componentDidMount');
+    /* console.log('componentDidMount'); */
   }
 
   chamaApi = async () => {
@@ -30,7 +30,7 @@ class Header extends Component {
 
   render() {
     const { isloadingSt, userNameSt } = this.state;
-    console.log(isloadingSt);
+    /* console.log(isloadingSt); */
 
     if (isloadingSt) return <Loading />;
     return (
