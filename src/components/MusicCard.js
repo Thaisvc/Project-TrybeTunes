@@ -1,30 +1,45 @@
-import React from 'react';
-import { shape, arrayOf } from 'prop-types';
+import { func, shape } from 'prop-types';
+import React, { Component } from 'react';
 
-class MusicCard extends React.Component {
+class MusicCard extends Component {
   render() {
-    const { musicAlbum } = this.props;
-
+    const {
+      tracks: { trackId, trackName, previewUrl },
+      tracks,
+      handleChange,
+      favoriteChecked,
+    } = this.props;
+    // console.log(!!favSongsChecked[trackId]);
     return (
-      <section>
-        {musicAlbum.slice(1).map(({ trackId, trackName, previewUrl }) => (
-          <div key={ trackId }>
-            <h4>{trackName}</h4>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
-              <track kind="captions" />
-              {previewUrl}
-              <code>audio</code>
-              .
-            </audio>
-          </div>
-        ))}
+      <section key={ trackId }>
+        <h3>{trackName}</h3>
+        <audio data-testid="audio-component" src={ previewUrl } controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          {' '}
+          <code>audio</code>
+          .
+        </audio>
+        <label htmlFor="trackId">
+          Favorita
+          <input
+            id="trackId"
+            name={ trackId }
+            type="checkbox"
+            data-testid={ `checkbox-music-${trackId}` }
+            checked={ favoriteChecked[trackId] }
+            onChange={ (event) => handleChange(event, tracks) }
+          />
+        </label>
       </section>
     );
   }
 }
 
 MusicCard.propTypes = {
-  musicAlbum: arrayOf(shape({})).isRequired,
+  tracks: shape({}).isRequired,
+  handleChange: func.isRequired,
+  favoriteChecked: shape({}).isRequired,
 };
 
 export default MusicCard;

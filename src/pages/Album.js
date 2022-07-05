@@ -1,51 +1,73 @@
 import { shape } from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../components/header';
-import getMusics from '../services/musicsAPI';
+import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import { addSong } from '../services/favoriteSongsAPI';
+import getMusics from '../services/musicsAPI';
 
-class Album extends React.Component {
+class Album extends Component {
   constructor() {
     super();
-    // crio meu estado
     this.state = {
-      albumLoadedSt: [],
-      toCharge: false,
+      album: [],
+      favorite: false,
+      favoriteCheckedSt: {},
+      loadingSuccess: false,
     };
   }
 
   componentDidMount() {
-    this.loadAlbum();
-    /* console.log('componentDidMount'); */
+    this.loadMusic();
   }
 
-  // busco na api pelo id do album
-  loadAlbum = async () => {
+  handleChange = ({ target: { name, checked } }, music) => {
+    /* console.log(music); */
+    this.setState(({ favoriteCheckedSt }) => ({
+      favorite: true,
+      favoriteCheckedSt: { ...favoriteCheckedSt, [name]: checked }, // salva estado anterior
+    }), async () => {
+      await addSong(music);
+      this.setState({ favorite: false });
+    });
+  };
+
+  loadMusic = async () => {
     const { match: { params: { id } } } = this.props;
-    const resultApi = await getMusics(id);
-    // atualizo o estado com os dados da api
+    const resutApi = await getMusics(id);
     this.setState({
-      albumLoadedSt: resultApi,
-      toCharge: true,
+      album: resutApi,
+      favorite: false,
+      loadingSuccess: true,
     });
   };
 
   render() {
-    const { albumLoadedSt, toCharge } = this.state;
-
+    const { album, favorite, favoriteCheckedSt, loadingSuccess } = this.state;
     return (
       <>
         <Header />
-        <div data-testid="page-album">Album</div>
-        {toCharge && (
-          <>
-            <h2 data-testid="album-name">{ albumLoadedSt[0].collectionName }</h2>
-            <h3 data-testid="artist-name">{ albumLoadedSt[0].artistName }</h3>
-            {/*  <img src={ albumLoadedSt[0].artworkUrl100 } alt="album" /> */}
-            <MusicCard musicAlbum={ albumLoadedSt } />
-          </>
-        )}
+        <div data-testid="page-album">
 
+          {loadingSuccess && (
+            <section>
+              <h2 data-testid="album-name">{album[0].collectionName}</h2>
+              <p data-testid="artist-name">{album[0].artistName}</p>
+              {favorite ? <Loading /> : (
+                <>
+                  {album.slice(1).map((song) => (
+                    <MusicCard
+                      key={ song.trackId }
+                      tracks={ song }
+                      handleChange={ this.handleChange }
+                      favoriteChecked={ favoriteCheckedSt }
+                    />
+                  ))}
+                </>
+              )}
+            </section>
+          )}
+        </div>
       </>
     );
   }
@@ -54,5 +76,5 @@ class Album extends React.Component {
 Album.propTypes = {
   match: shape({}).isRequired,
 };
+
 export default Album;
-/*  */
