@@ -10,7 +10,7 @@ class MusicCard extends React.Component {
         {musicAlbum.slice(1).map(({ trackId, trackName, previewUrl }) => (
           <div key={ trackId }>
             <h4>{trackName}</h4>
-            <audio data-testid="audio-component" src="{previewUrl}" controls>
+            <audio data-testid="audio-component" src={ previewUrl } controls>
               <track kind="captions" />
               {previewUrl}
               <code>audio</code>
