@@ -27,7 +27,7 @@ class Album extends Component {
       favorite: true,
       favoriteCheckedSt: { ...favoriteCheckedSt, [name]: checked }, // salva estado anterior
     }), async () => {
-      await addSong(music);
+      await addSong(music); // busca na api
       this.setState({ favorite: false });
     });
   };
@@ -55,10 +55,10 @@ class Album extends Component {
               <p data-testid="artist-name">{album[0].artistName}</p>
               {favorite ? <Loading /> : (
                 <>
-                  {album.slice(1).map((song) => (
+                  {album.slice(1).map((track) => (
                     <MusicCard
-                      key={ song.trackId }
-                      tracks={ song }
+                      key={ track.trackId }
+                      tracks={ track }
                       handleChange={ this.handleChange }
                       favoriteChecked={ favoriteCheckedSt }
                     />

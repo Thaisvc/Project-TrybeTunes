@@ -5,14 +5,12 @@ class MusicCard extends Component {
   render() {
     const {
       tracks: { trackId, trackName, previewUrl },
-      tracks,
-      handleChange,
-      favoriteChecked,
-    } = this.props;
+      tracks, handleChange, favoriteChecked } = this.props;
+
     // console.log(!!favSongsChecked[trackId]);
     return (
       <section key={ trackId }>
-        <h3>{trackName}</h3>
+        <h4>{trackName}</h4>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
