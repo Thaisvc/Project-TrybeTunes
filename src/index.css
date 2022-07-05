@@ -40,3 +40,10 @@ code {
   width: 500px;
   height: 100px;
 } */
+
+
+.cardAlbum{
+  background-color:  rgb(159, 146, 146);
+  height: 240px;
+  width: 300px;
+}
