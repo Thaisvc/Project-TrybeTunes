@@ -35,12 +35,34 @@ class Header extends Component {
     if (isloadingSt) return <Loading />;
     return (
       <header className="header" data-testid="header-component">
-        Header
-        <p data-testid="header-user-name">{userNameSt}</p>
+        <h2>TrybeTunes</h2>
+        <div>
+          <Link
+            className="header-link"
+            data-testid="link-to-search"
+            to="/search"
+          >
+            Pesquisar
 
-        <Link data-testid="link-to-search" to="/search">Pesquisar</Link>
-        <Link data-testid="link-to-favorites" to="/favorites">Favoritos</Link>
-        <Link data-testid="link-to-profile" to="/profile">Perfil</Link>
+          </Link>
+          <Link
+            className="header-link"
+            data-testid="link-to-favorites"
+            to="/favorites"
+          >
+            Favoritos
+
+          </Link>
+          <Link
+            className="header-link"
+            data-testid="link-to-profile"
+            to="/profile"
+          >
+            Perfil
+
+          </Link>
+        </div>
+        <p data-testid="header-user-name">{userNameSt}</p>
 
       </header>
     );

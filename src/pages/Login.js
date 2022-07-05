@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import Header from '../components/header';
 
 class Login extends React.Component {
   constructor() {
@@ -47,27 +48,30 @@ class Login extends React.Component {
     }
 
     return (
-      <div data-testid="page-login">
-        <label htmlFor="login-name-input">
-          Nome:
-          <input
-            data-testid="login-name-input"
-            name="input-name"
-            id="login-name-input"
-            className="input-login"
-            onChange={ this.hendlerInput }
-          />
-        </label>
-        <button
-          data-testid="login-submit-button"
-          type="button"
-          disabled={ btnLoginSt }
-          onClick={ this.hendlerBtnLogin }
-        >
-          Entrar
+      <>
+        <Header />
+        <div data-testid="page-login" className="loginPage">
+          <label htmlFor="login-name-input">
+            Nome:
+            <input
+              data-testid="login-name-input"
+              name="input-name"
+              id="login-name-input"
+              className="input-login"
+              onChange={ this.hendlerInput }
+            />
+          </label>
+          <button
+            data-testid="login-submit-button"
+            type="button"
+            disabled={ btnLoginSt }
+            onClick={ this.hendlerBtnLogin }
+          >
+            Entrar
 
-        </button>
-      </div>
+          </button>
+        </div>
+      </>
 
     );
   }

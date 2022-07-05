@@ -50,8 +50,8 @@ class Search extends React.Component {
     const { btnPesquisaSt, resultAlbumSt, nameArtistSt, loadingSt, artistaSt } = this.state;
    if ( loadingSt) return <Loading /> 
     return (
+      <><Header />
       <section>
-        <Header />
 
         {
           // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array
@@ -85,6 +85,7 @@ class Search extends React.Component {
         </div>
 
       </section>
+      </>
     );
   }
 }

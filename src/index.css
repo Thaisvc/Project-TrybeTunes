@@ -1,5 +1,5 @@
 body {
-  margin: 10px;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -20,11 +20,12 @@ code {
 
 .main-content {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .input-login {
   width: 300px;
-  height: 20px;
 
 }
 
@@ -33,17 +34,33 @@ code {
   font-family: monospace;
 }
 
-/* .header{
-  position: relative;
-  top: 0;
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color:#60c28e;
-  width: 500px;
-  height: 100px;
-} */
+  width: 100%;
+  height: 90px;
+  padding: 8px;
+  color: white;
+font-weight: 700;
+}
 
 
 .cardAlbum{
   background-color:  rgb(159, 146, 146);
   height: 240px;
   width: 300px;
+}
+.loginPage{
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 520px;
+}
+
+.header-link{
+padding: 5px;
+color: white;
+font-weight: 700;
 }
