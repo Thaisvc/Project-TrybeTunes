@@ -34,39 +34,100 @@ code {
   font-family: monospace;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#60c28e;
+  background-color: #60c28e;
   width: 100%;
   height: 90px;
   padding: 8px;
   color: white;
-font-weight: 700;
+  font-weight: 700;
 }
 
-
-.cardAlbum{
-  background-color:  rgb(159, 146, 146);
-  height: 240px;
-  width: 300px;
-}
-.loginPage{
+.loginPage {
   display: flex;
   align-items: center;
   width: 600px;
   height: 520px;
 }
 
-.header-link{
-padding: 5px;
-color: white;
-font-weight: 700;
+.header-link {
+  padding: 5px;
+  color: white;
+  font-weight: 700;
 }
 
-.titleArtist{
+.titleArtist {
   color: #3d405b;
   font-weight: 800;
   font-style: italic;
+}
+
+/* PAGINA SEARCH */
+.container-search {
+  padding: 10px;
+  background-color: #e9ecef;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  height: 2000px;
+}
+
+.title-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3d405b;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.btn-search {
+  border-color: #60c28e;
+  box-shadow: inset 0px 1px 0px 0px #e3f1e3;
+  color: #68b465;
+  ;
+  text-shadow: 0px 0px 0px #528009;
+}
+
+.btn-search:hover {
+  background-color: #60c28e;
+  box-shadow: inset 0px 1px 0px 0px #e3f1e3;
+  color: white;
+  text-shadow: 0px 0px 0px #528009;
+}
+
+/* PAGINA CARDALBUNS */
+
+.container-cardAlbum {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+
+}
+
+.cardAlbum {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebebf3;
+  border: none;
+  border-radius: 5px;
+  margin: 14px;
+  border-style: groove;
+  box-shadow: #343a40 13px 13px 5px;
+}
+
+
+.imagem {
+  transition: all 1.5s;
+  cursor: pointer;
+}
+
+.imagem:hover {
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }

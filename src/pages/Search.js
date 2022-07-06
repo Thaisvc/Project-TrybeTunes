@@ -52,17 +52,12 @@ class Search extends React.Component {
     return (
       <>
         <Header />
-        <section>
+        <section className="container-search">
           {/* // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array */}
 
-          { <p className="titleArtist">{`Resultado De Álbuns De: ${artistaSt}`}</p>}
-          {resultAlbumSt.map((title) => (
-            <CardAlbuns
-              key={ title.artistId }
-              cardInfo={ title }
-            />
-          ))}
-          <div data-testid="page-search">search</div>
+          <div data-testid="page-search">
+            <h4 className="title-search">SEARCH</h4>
+          </div>
           <div>
             <input
               data-testid="search-artist-input"
@@ -71,7 +66,9 @@ class Search extends React.Component {
               onChange={ this.hendlerBtnsearch }
               placeholder="Nome Do Artista"
             />
+
             <button
+              className="btn-search"
               data-testid="search-artist-button"
               type="button"
               disabled={ btnPesquisaSt }
@@ -80,7 +77,17 @@ class Search extends React.Component {
               Pesquisar
 
             </button>
-
+            <p className="titleArtist">{`Resultado De Álbuns De: ${artistaSt}`}</p>
+            <section className="container-cardAlbum">
+              {
+                resultAlbumSt.map((title) => (
+                  <CardAlbuns
+                    key={ title.artistId }
+                    cardInfo={ title }
+                  />
+                ))
+              }
+            </section>
             {/* ERRO SO NO LINT ORDINÁRIO
             {resultAlbumSt.length > 0 ? <p>
               Resultado de álbuns de:
