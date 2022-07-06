@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from '../components/header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import getMusics from '../services/musicsAPI';
 
 class Album extends Component {
@@ -28,10 +28,15 @@ class Album extends Component {
       favorite: true,
       favoriteCheckedSt: { ...favoriteCheckedSt, [name]: checked }, // salva estado anterior
     }), async () => {
-      await addSong(music); // busca na api
+      await this.removeFav(checked, music);// busca na api
       this.setState({ favorite: false });
     });
   };
+
+  removeFav = async (action, music) => {
+    if (action) await addSong(music);
+    if (!action) await removeSong(music);
+  }
 
   loadMusic = async () => {
     const { match: { params: { id } } } = this.props;
