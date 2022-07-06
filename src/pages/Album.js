@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from '../components/header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import getMusics from '../services/musicsAPI';
 
 class Album extends Component {
@@ -19,6 +19,7 @@ class Album extends Component {
 
   componentDidMount() {
     this.loadMusic();
+    this.getFavoritesChecked();
   }
 
   handleChange = ({ target: { name, checked } }, music) => {
@@ -41,6 +42,17 @@ class Album extends Component {
       loadingSuccess: true,
     });
   };
+
+  getFavoritesChecked = async () => {
+    const resutApi = await getFavoriteSongs();
+    // console.log('api', resutApi);
+    // resutApi.forEach(({elelemt}) => {(elelemt.trackId)}) erro
+    resutApi.forEach(({ trackId }) => {
+      this.setState(({ favoriteCheckedSt }) => ({
+        favoriteCheckedSt: { ...favoriteCheckedSt, [trackId]: true },
+      }));
+    });
+  }
 
   render() {
     const { album, favorite, favoriteCheckedSt, loadingSuccess } = this.state;
