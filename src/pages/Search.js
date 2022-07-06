@@ -54,13 +54,14 @@ class Search extends React.Component {
         <Header />
         <section>
           {/* // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array */}
-          { resultAlbumSt.map((title) => (
+
+          {`Resultado de álbuns de: ${artistaSt}`}
+          {resultAlbumSt.map((title) => (
             <CardAlbuns
               key={ title.artistId }
               cardInfo={ title }
             />
-          )) }
-
+          ))}
           <div data-testid="page-search">search</div>
           <div>
             <input
@@ -80,12 +81,17 @@ class Search extends React.Component {
 
             </button>
 
+            {/* ERRO SO NO LINT ORDINÁRIO
             {resultAlbumSt.length > 0 ? <p>
               Resultado de álbuns de:
               {' '}
               {artistaSt}
             </p>
-              : <p>Nenhum álbum foi encontrado</p>}
+              : <p>Nenhum álbum foi encontrado</p>} */}
+            {resultAlbumSt.length === 0
+              && (
+                <p> Nenhum álbum foi encontrado </p>
+              )}
 
           </div>
 
