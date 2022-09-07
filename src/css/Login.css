@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   height: 520px;
-  width: 600px;
+  justify-content: center;
 }
 
 .color {
