@@ -1,5 +1,6 @@
 import { func, shape } from 'prop-types';
 import React, { Component } from 'react';
+import '../css/Album.css';
 
 class MusicCard extends Component {
   render() {
@@ -10,15 +11,23 @@ class MusicCard extends Component {
     // console.log(!!favSongsChecked[trackId]);
     return (
       <section key={ trackId }>
-        <h4>{trackName}</h4>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
+        <h4 className="titles">
+          {' '}
+          {trackName}
+        </h4>
+        <audio
+          data-testid="audio-component"
+          className="audio"
+          src={ previewUrl }
+          controls
+        >
           <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}
           <code>audio</code>
           .
         </audio>
-        <label htmlFor="trackId">
+        <label htmlFor="trackId" className="titles">
           Favorita
           <input
             id="trackId"

@@ -5,6 +5,7 @@ import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import getMusics from '../services/musicsAPI';
+import '../css/Album.css';
 
 class Album extends Component {
   constructor() {
@@ -64,12 +65,24 @@ class Album extends Component {
     return (
       <>
         <Header />
-        <div data-testid="page-album">
+        <div data-testid="page-album" className="container-main">
 
           {loadingSuccess && (
             <section>
-              <h2 data-testid="album-name">{album[0].collectionName}</h2>
-              <p data-testid="artist-name">{album[0].artistName}</p>
+              <h2
+                data-testid="album-name"
+                className="title"
+              >
+                {album[0].collectionName}
+
+              </h2>
+              <p
+                data-testid="artist-name"
+                className="title"
+              >
+                {album[0].artistName}
+
+              </p>
               {favorite ? <Loading /> : (
                 <>
                   {album.slice(1).map((track) => (

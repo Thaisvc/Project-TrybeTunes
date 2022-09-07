@@ -1,0 +1,19 @@
+/* stylelint-disable font-family-name-quotes */
+
+/* stylelint-disable property-no-vendor-prefix */
+
+/* stylelint-disable order/properties-alphabetical-order */
+.container-main {
+  background-color: white;
+  padding: 10px;
+}
+
+.titles {
+  font-family: 'Federant' , cursive;
+  text-decoration: none;
+}
+
+.audio {
+  width: 400px;
+  height: 60px;
+}
