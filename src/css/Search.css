@@ -1,0 +1,56 @@
+/* stylelint-disable value-list-comma-space-after */
+
+/* stylelint-disable order/properties-alphabetical-order */
+
+/* stylelint-disable property-no-vendor-prefix */
+
+/* stylelint-disable font-family-name-quotes */
+.container-search {
+  background-color: #8199b1fb;
+  display: flex;
+  flex-wrap: wrap;
+  height: 2000px;
+  padding: 10px;
+  width: 100%;
+}
+
+.title-search {
+  font-family: 'Federant' , cursive;
+  padding-right: 20px;
+}
+
+.form {
+  display: flex;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px ,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px , rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+}
+
+.input-name {
+  width: 850px;
+}
+
+.titleArtist {
+  color: #3d405b;
+  font-family: 'Federant' , cursive;
+  font-weight: 800;
+  padding-top: 10px;
+}
+
+h4 span {
+  background: linear-gradient(to bottom, #2a4770 50%, black 50%);
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-family: 'Federant' , cursive;
+  -webkit-background-clip: text;
+  font-weight: 800;
+
+}

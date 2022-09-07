@@ -3,6 +3,7 @@ import Header from '../components/header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import CardAlbuns from '../components/CardAlbuns';
 import Loading from '../components/Loading';
+import '../css/Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -55,28 +56,32 @@ class Search extends React.Component {
         <section className="container-search">
           {/* // faz o map e passa a props cardInfo para CardAlbuns onde e feito a exibiçao dos itens do array */}
 
-          <div data-testid="page-search">
-            <h4 className="title-search">SEARCH</h4>
-          </div>
-          <div>
-            <input
-              data-testid="search-artist-input"
-              type="text"
-              Value={ nameArtistSt }
-              onChange={ this.hendlerBtnsearch }
-              placeholder="Nome Do Artista"
-            />
+          <h4 className="title-search">
+            {' '}
+            <span>SEARCH</span>
+          </h4>
+          <div className="container-form">
+            <div className="form">
+              <input
+                className="form-control input-name"
+                data-testid="search-artist-input"
+                type="text"
+                Value={ nameArtistSt }
+                onChange={ this.hendlerBtnsearch }
+                placeholder="Nome Do Artista"
+              />
 
-            <button
-              className="btn-search"
-              data-testid="search-artist-button"
-              type="button"
-              disabled={ btnPesquisaSt }
-              onClick={ this.hendlerSearchlbum }
-            >
-              Pesquisar
+              <button
+                className="btn btn-outline-secondary btn-search button"
+                data-testid="search-artist-button"
+                type="button"
+                disabled={ btnPesquisaSt }
+                onClick={ this.hendlerSearchlbum }
+              >
+                Pesquisar
 
-            </button>
+              </button>
+            </div>
             <p className="titleArtist">{`Resultado De Álbuns De: ${artistaSt}`}</p>
             <section className="container-cardAlbum">
               {
@@ -101,7 +106,6 @@ class Search extends React.Component {
               )}
 
           </div>
-
         </section>
       </>
     );
