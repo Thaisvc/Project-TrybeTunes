@@ -33,39 +33,44 @@ class Header extends Component {
     const { isloadingSt, userNameSt } = this.state;
     /* console.log(isloadingSt); */
 
-    if (isloadingSt) return <Loading />;
     return (
-      <header className="header" data-testid="header-component">
-        <h2 className="title">TrybeTunes</h2>
-        <div>
-          <Link
-            className="header-link"
-            data-testid="link-to-search"
-            to="/search"
-          >
-            Pesquisar
+      <div className="header-loading">
+        {' '}
+        {isloadingSt ? <Loading />
 
-          </Link>
-          <Link
-            className="header-link"
-            data-testid="link-to-favorites"
-            to="/favorites"
-          >
-            Favoritos
+          : (
+            <header className="header" data-testid="header-component">
+              <h2 className="title">TrybeTunes</h2>
+              <div>
+                <Link
+                  className="header-link"
+                  data-testid="link-to-search"
+                  to="/search"
+                >
+                  Pesquisar
 
-          </Link>
-          <Link
-            className="header-link"
-            data-testid="link-to-profile"
-            to="/profile"
-          >
-            Perfil
+                </Link>
+                <Link
+                  className="header-link"
+                  data-testid="link-to-favorites"
+                  to="/favorites"
+                >
+                  Favoritos
 
-          </Link>
-        </div>
-        <p data-testid="header-user-name" className="header-link">{userNameSt}</p>
+                </Link>
+                <Link
+                  className="header-link"
+                  data-testid="link-to-profile"
+                  to="/profile"
+                >
+                  Perfil
 
-      </header>
+                </Link>
+              </div>
+              <p data-testid="header-user-name" className="header-user">{userNameSt}</p>
+
+            </header>)}
+      </div>
     );
   }
 }

@@ -65,7 +65,7 @@ class Login extends React.Component {
           </div>
 
           <button
-            className="btn btn-outline-secondary color input-name"
+            className="btn btn-outline-secondary color"
             data-testid="login-submit-button"
             type="button"
             disabled={ btnLoginSt }

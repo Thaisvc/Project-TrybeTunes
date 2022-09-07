@@ -12,11 +12,7 @@ code {
     monospace;
 }
 
-.loading {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
+
 
 .main-content {
   display: flex;
@@ -28,13 +24,6 @@ code {
   width: 300px;
 
 }
-
-.loading {
-  color: red;
-  font-family: monospace;
-}
-
-
 
 
 
