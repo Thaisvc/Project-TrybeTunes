@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import Header from '../components/header';
+import '../css/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -51,17 +52,20 @@ class Login extends React.Component {
       <>
         <Header />
         <div data-testid="page-login" className="loginPage">
-          <label htmlFor="login-name-input">
-            Nome:
+          <div className="form-group">
             <input
+              className="form-control input-name"
               data-testid="login-name-input"
               name="input-name"
               id="login-name-input"
-              className="input-login"
               onChange={ this.hendlerInput }
+              placeholder="Nome"
             />
-          </label>
+
+          </div>
+
           <button
+            className="btn btn-outline-secondary color input-name"
             data-testid="login-submit-button"
             type="button"
             disabled={ btnLoginSt }
