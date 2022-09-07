@@ -30,32 +30,3 @@ code {
 
 /* PAGINA CARDALBUNS */
 
-.container-cardAlbum {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px;
-
-}
-
-.cardAlbum {
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  background-color: #ebebf3;
-  border: none;
-  border-radius: 5px;
-  margin: 14px;
-  border-style: groove;
-  box-shadow: #343a40 13px 13px 5px;
-}
-
-
-.imagem {
-  transition: all 1.5s;
-  cursor: pointer;
-}
-
-.imagem:hover {
-  -webkit-transform: scale(2);
-  transform: scale(2);
-}

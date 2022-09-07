@@ -1,0 +1,35 @@
+/* stylelint-disable font-family-name-quotes */
+
+/* stylelint-disable property-no-vendor-prefix */
+
+/* stylelint-disable order/properties-alphabetical-order */
+.container-cardAlbum {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.cardAlbum {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin: 14px;
+  border-style: groove;
+  border: none;
+}
+
+.imagem {
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.imagem:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.title {
+  font-family: 'Federant' , cursive;
+  text-decoration: none;
+}
