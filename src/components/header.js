@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../css/Header.css';
 
 class Header extends Component {
   constructor() {
@@ -35,7 +36,7 @@ class Header extends Component {
     if (isloadingSt) return <Loading />;
     return (
       <header className="header" data-testid="header-component">
-        <h2>TrybeTunes</h2>
+        <h2 className="title">TrybeTunes</h2>
         <div>
           <Link
             className="header-link"
@@ -62,7 +63,7 @@ class Header extends Component {
 
           </Link>
         </div>
-        <p data-testid="header-user-name">{userNameSt}</p>
+        <p data-testid="header-user-name" className="header-link">{userNameSt}</p>
 
       </header>
     );

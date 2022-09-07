@@ -1,0 +1,24 @@
+/* eslint-disable */
+.header {
+  align-items: center;
+  background-color: #173156;
+  color: white;
+  display: flex;
+  font-weight: 700;
+  height: 90px;
+  justify-content: space-between;
+  padding: 8px;
+  width: 100%;
+}
+
+.header-link {
+  color: white;
+  font-family: 'Federant' , cursive , sans-serif;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.title {
+  font-family: 'Federant' , cursive;
+}
+

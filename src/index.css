@@ -34,17 +34,6 @@ code {
   font-family: monospace;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #60c28e;
-  width: 100%;
-  height: 90px;
-  padding: 8px;
-  color: white;
-  font-weight: 700;
-}
 
 .loginPage {
   display: flex;
@@ -53,11 +42,7 @@ code {
   height: 520px;
 }
 
-.header-link {
-  padding: 5px;
-  color: white;
-  font-weight: 700;
-}
+
 
 .titleArtist {
   color: #3d405b;
